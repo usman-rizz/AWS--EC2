@@ -1,0 +1,55 @@
+Creating EC2 instance:
+
+
+1) Name and tags
+> ec2 scd datawarehousing ur
+
+2) Application and OS Images (Amazon Machine Image) 
+> select Amazon Linux
+
+3) Instance type (select according to your workload you want to run on the instance, 
+for example, t3.micro is a good choice for small workloads and testing purposes):
+> t3.micro
+
+4) Key pair (login)
+
+This key pair will be used to securely connect to the instance once it is launched.
+
+Why we are creating key pair?
+We are creating a key pair to enable secure access to the instance. The key pair consists of a `public key` and a `private key`.
+The public key is stored on the instance, while the private key is kept by the user. 
+When the user wants to connect to the instance, they use the private key to authenticate themselves. 
+This ensures that only authorized users can access the instance, providing an additional layer of security.
+> kp scd datawarehousing ur
+
+5) Network settings 
+
+Network settings is imp for the instance as they determine how the instance will communicate with other resources and the internet. 
+By selecting a virtual private cloud (VPC) and subnet, you can control the network environment in which the instance operates. 
+Configuring security groups allows you to define `inbound` and `outbound traffic rules`, ensuring that only authorized traffic can reach the instance. 
+This helps to protect the instance from unauthorized access and potential security threats.
+
+6) in bound security group rules 
+in netwwork setting , we set the security group. 
+group 1 is for allowing ssh access to the instance (default chances), 
+
+and we create Rule 2: 
+
+type >Custom TCP Ports
+protocal >TPC(by default)
+Port range > 4000-38888     allows many application services to run, like APIs,development, servers, dashboards,microservices etc..
+
+sourcetype > Anywhere
+soure > 0.0.0.0/0
+description > Allow application ports for development services
+
+This rule allows access to application and development ports that may be used by services running on the instance.
+
+6) Configure storage 
+Volume type >General Purpose SSD (gp3)
+Size > 16 GiB
+
+7) Click on launch Instance..
+
+
+next file .. connecting to ec2.txt
