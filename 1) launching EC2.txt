@@ -1,3 +1,5 @@
+First of all create AWS account > Search for EC2 instance > click on create Instance..
+
 Creating EC2 instance:
 
 
@@ -19,6 +21,7 @@ Why we are creating key pair?
 We are creating a key pair to enable secure access to the instance. The key pair consists of a `public key` and a `private key`.
 The public key is stored on the instance, while the private key is kept by the user. 
 When the user wants to connect to the instance, they use the private key to authenticate themselves. 
+
 This ensures that only authorized users can access the instance, providing an additional layer of security.
 > kp scd datawarehousing ur
 
@@ -51,5 +54,8 @@ Size > 16 GiB
 
 7) Click on launch Instance..
 
+this will create your EC2 instance 
 
-next file .. connecting to ec2.txt
+
+
+next file .. connecting to ec2.txt (stay tuned!)
